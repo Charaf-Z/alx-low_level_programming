@@ -17,7 +17,7 @@ int main(void)
 		{
 			printf(", ");
 		}
-		first = count;
+		first = second;
 		second = next;
 		count++;
 	}
