@@ -11,7 +11,6 @@ void print_times_table(int n)
 	{
 		return;
 	}
-
 	for (i = 0; i <= n; i++)
 	{
 		for (j = 0; j <= n; j++)
@@ -25,26 +24,20 @@ void print_times_table(int n)
 				{
 					_putchar(' ');
 					_putchar(' ');
+					_putchar(48 + product);
 				}
 				else if (product < 100)
 				{
 					_putchar(' ');
+					_putchar(48 + (product / 10));
+					_putchar(48 + (product % 10));
 				}
-			}
-			if (product < 10)
-			{
-				_putchar(48 + product);
-			}
-			else if (product < 100)
-			{
-				_putchar(48 + (product / 10));
-				_putchar(48 + (product % 10));
-			}
-			else
-			{
-				_putchar(48 + (product / 100));
-				_putchar(48 + ((product / 10) % 10));
-				_putchar(48 + ((product % 10) % 10));
+				else
+				{
+					_putchar(48 + (product / 100));
+					_putchar(48 + ((product / 10) % 10);
+					_putchar(48 + ((product % 10) % 10));
+				}
 			}
 		}
 		_putchar('\n');
