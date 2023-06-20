@@ -6,10 +6,9 @@
 int main(void)
 {
 	int i;
-	unsigned long first = 1, second = 2, sum;
+	unsigned long first = 0, second = 1, sum;
 
-	printf("%lu, %lu", first, second);
-	for (i = 3; i <= 50; i++)
+	for (i = 1; i <= 50; i++)
 	{
 		sum = first + second;
 		printf("%lu", sum);
