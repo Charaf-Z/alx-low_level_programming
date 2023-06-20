@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int count = 2, limit = 98;
+	int count = 2, limit = 100;
 	unsigned long first = 1, second = 2, next;
 
 	printf("%lu, %lu, ", first, second);
