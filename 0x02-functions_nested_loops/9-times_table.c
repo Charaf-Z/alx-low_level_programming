@@ -23,16 +23,12 @@ void times_table(void)
 			}
 			else
 			{
+				_putchar(',');
+				_putchar(' ');
 				_putchar(48 + (product / 10));
 				_putchar(48 + (product % 10));
 			}
 
-			if (j != 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-			}
 		}
 		_putchar('\n');
 	}
