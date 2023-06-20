@@ -12,3 +12,7 @@
 9-times_table &rarr; Write a function that prints the 9 times table, starting with 0. <br />
 10-add &rarr; Write a function that adds two integers and returns the result. <br />
 11-print_to_98 &rarr; Write a function that prints all natural numbers from n to 98. <br />
+100-times_table &rarr; prints the n times table, starting with 0. <br />
+102-fibonacci &rarr; prints the first 50 Fibonacci numbers, starting with 1 and 2.
+103-fibonacci &rarr;  finds and prints the sum of the even-valued terms in the Fionacci sequence. <br />
+104-fibonacci &rarr; finds and prints the first 98 Fibonacci numbers, starting with 1 and 2. <br />
