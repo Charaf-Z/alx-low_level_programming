@@ -7,6 +7,8 @@ void print_numbers(void)
 	int nb;
 
 	for (nb = 48; nb <= 57; nb++)
+	{
 		_putchar(nb);
+	}
 	_putchar('\n');
 }
