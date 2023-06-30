@@ -1,18 +1,13 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- * print_buffer - prints buffer
+ * print_buffer - function that prints a buffer
  * @b: buffer
  * @size: size
- * Return: void
  */
-
 void print_buffer(char *b, int size)
 {
-	int offset, j, i;
-
-	offset = 0;
+	int offset = 0, i, j;
 
 	if (size <= 0)
 	{
@@ -30,22 +25,17 @@ void print_buffer(char *b, int size)
 			else
 				printf("  ");
 			if (i % 2)
-			{
 				printf(" ");
-			}
 		}
 		for (i = 0; i < j; i++)
 		{
 			int c = *(b + offset + i);
 
 			if (c < 32 || c > 132)
-			{
 				c = '.';
-			}
 			printf("%c", c);
 		}
 		printf("\n");
 		offset += 10;
 	}
 }
-
