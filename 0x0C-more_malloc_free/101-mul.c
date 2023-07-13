@@ -56,34 +56,41 @@ int _strlen(char *s)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int *result, pst = 1, s1_len, s2_len, dg1, dg2, carry, i;
+	int *result, a = 0, s1_len, s2_len, dg1, dg2, carry, i;
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		_error();
 	s1_len = _strlen(s1);
 	s2_len = _strlen(s2);
-	result = calloc(s1_len + s2_len, sizeof(int));
+	result = malloc(sizeof(int) * (s1_len + s2_len));
 	if (!result)
 		return (1);
+	for (i = 0; i < s1_len + s2_len; i++)
+		result[i] = 0;
 	for (s1_len -= 1; s1_len >= 0; s1_len--)
 	{
 		dg1 = s1[s1_len] - 48;
 		carry = 0;
-		pst = _strlen(s1) - s1_len;
-		for (s2_len = _strlen(s2) - 1; s2_len >= 0; s2_len--, pst++)
+		for (s2_len = _strlen(s2) - 1; s2_len >= 0; s2_len--)
 		{
 			dg2 = s2[s2_len] - 48;
-			carry += result[pst - 1] + (dg1 * dg2);
-			result[pst - 1] = carry % 10;
+			carry += result[s1_len + s2_len + 1] + (dg1 * dg2);
+			result[s1_len + s2_len + 1] = carry % 10;
 			carry /= 10;
 		}
 		if (carry > 0)
-			result[pst - 1] = carry;
+			result[s1_len + s2_len + 1] = carry;
 	}
-	pst--;
-	for (pst -= 1; pst >= 0; pst--)
-		_putchar(result[pst] + 48);
+	for (i = 0; i < (s1_len + s2_len) - 1; i++)
+	{
+		if (result[i])
+			a = 1;
+		if (a)
+			_putchar(result[i] + 48);
+	}
+	if (!a)
+		_putchar(48);
 
 	_putchar('\n');
 	free(result);
