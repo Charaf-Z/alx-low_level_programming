@@ -57,7 +57,6 @@ int main(int argc, char *argv[])
 {
 	char *s1, *s2;
 	int *result, pst = 1, s1_len, s2_len, dg1, dg2, carry, i;
-	(void)argc;
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
