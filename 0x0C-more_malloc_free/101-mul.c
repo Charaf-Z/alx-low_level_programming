@@ -39,10 +39,10 @@ int is_digit(char *s)
 
 int _strlen(char *s)
 {
-	int i = 0;
+	int i;
 
-	while (s[i] != '\0')
-		i++;
+	for (i = 0; s[i] != '\0'; i++)
+		;
 	return (i);
 }
 
@@ -62,11 +62,11 @@ int main(int argc, char *argv[])
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		_error();
 	s1_len = _strlen(s1), s2_len = _strlen(s2);
-	len = s1_len + s2_len;
+	len = s1_len + s2_len + 1;
 	result = malloc(sizeof(int) * len);
 	if (!result)
 		return (1);
-	for (i = 0; i < s1_len + s2_len; i++)
+	for (i = 0; i <= (s1_len + s2_len); i++)
 		result[i] = 0;
 	for (s1_len -= 1; s1_len >= 0; s1_len--)
 	{
