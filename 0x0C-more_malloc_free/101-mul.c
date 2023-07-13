@@ -56,14 +56,14 @@ int _strlen(char *s)
 int main(int argc, char *argv[])
 {
 	char *s1, *s2;
-	int *result, a = 0, s1_len, s2_len, dg1, dg2, carry, i;
+	int *result, a = 0, len, s1_len, s2_len, dg1, dg2, carry, i;
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		_error();
-	s1_len = _strlen(s1);
-	s2_len = _strlen(s2);
-	result = malloc(sizeof(int) * (s1_len + s2_len));
+	s1_len = _strlen(s1), s2_len = _strlen(s2);
+	len = s1_len + s2_len;
+	result = malloc(sizeof(int) * len);
 	if (!result)
 		return (1);
 	for (i = 0; i < s1_len + s2_len; i++)
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 		if (carry > 0)
 			result[s1_len + s2_len + 1] = carry;
 	}
-	for (i = 0; i < (s1_len + s2_len) - 1; i++)
+	for (i = 0; i < len - 1; i++)
 	{
 		if (result[i])
 			a = 1;
