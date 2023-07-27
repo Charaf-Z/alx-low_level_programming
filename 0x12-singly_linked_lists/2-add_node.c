@@ -8,8 +8,9 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_head = malloc(sizeof(list_t));
-
+	list_t *new_head;
+       
+	new_head = malloc(sizeof(list_t));
 	if (!head || !new_head)
 		return (NULL);
 	if (str)
@@ -21,7 +22,6 @@ list_t *add_node(list_t **head, const char *str)
 			return (NULL);
 		}
 		new_head->len == _strlen(new_head->str);
-		new_head->next = NULL;
 	}
 	new_head->next = *head;
 	*head = new_head;
