@@ -6,7 +6,7 @@
  * @str: new string to add in the node
  * Return: the address of the new element, or NULL if it fails
  */
-list_t *add_node(list_t **head, const char str)
+list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_head = malloc(sizeof(ist_t));
 
