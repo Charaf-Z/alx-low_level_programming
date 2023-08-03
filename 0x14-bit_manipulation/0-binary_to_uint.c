@@ -13,7 +13,7 @@ unsigned int binary_to_uint(const char *b)
 		return (0);
 	while (*b)
 	{
-		if (*b != 48 && *b != 49)
+		if (*b != 48 || *b != 49)
 			return (0);
 		nbr = nbr * 2 + (*b++ - 48);
 	}
