@@ -5,7 +5,7 @@
  * p_magic - prints ELF magic bytes
  * @header: ELF header
  */
-void p_magic(Elf64 header)
+void p_magic(Elf64_Ehdr header)
 {
 	int idx = 0;
 
@@ -18,7 +18,7 @@ void p_magic(Elf64 header)
  * p_class - prints ELF class
  * @header: ELF header
  */
-void p_class(Elf64 header)
+void p_class(Elf64_Ehdr header)
 {
 	printf("Class: ");
 	switch (header.e_ident[EI_CLASS])
@@ -40,7 +40,7 @@ void p_class(Elf64 header)
  * p_data - prints ELF data
  * @header: ELF header
  */
-void p_data(Elf64 header)
+void p_data(Elf64_Ehdr header)
 {
 	printf("Data: ");
 	switch (header.e_ident[EI_DATA])
@@ -62,7 +62,7 @@ void p_data(Elf64 header)
  * p_version - prints ELF version
  * @header: ELF header
  */
-void p_version(Elf64 header)
+void p_version(Elf64_Ehdr header)
 {
 	printf("Version: %d %s \n",
 		header.e_ident[EI_VERSION],
@@ -73,7 +73,7 @@ void p_version(Elf64 header)
  * p_reste_osabi - prints the reste of ELF os/abi
  * @header: ELF header
  */
-void p_reste_osabi(Elf64 header)
+void p_reste_osabi(Elf64_Ehdr header)
 {
 	switch (header.e_ident[EI_OSABI])
 	{
@@ -90,7 +90,7 @@ void p_reste_osabi(Elf64 header)
 			printf("Novell - Modesto\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
+			printf("<unknown: %x>\n", header.e_ident[EI_OSABI]);
 	}
 }
 
@@ -98,7 +98,7 @@ void p_reste_osabi(Elf64 header)
  * p_osabi - prints ELF os/abi
  * @header: ELF header
  */
-void p_osabi(Elf64 header)
+void p_osabi(Elf64_Ehdr header)
 {
 	printf("OS/ABI: ");
 	switch (header.e_ident[EI_OSABI])
@@ -140,7 +140,7 @@ void p_osabi(Elf64 header)
  * p_abi_version - prints ELF ABI version
  * @header: ELF header
  */
-void p_abi_version(Elf64 header)
+void p_abi_version(Elf64_Ehdr header)
 {
 	printf("ABI Version: %d\n", header.e_ident[EI_ABIVERSION]);
 }
@@ -149,7 +149,7 @@ void p_abi_version(Elf64 header)
  * p_type - prints ELF type
  * @header: ELF header
  */
-void p_type(Elf64 header)
+void p_type(Elf64_Ehdr header)
 {
 	char *ptr = (char *)&header.e_type;
 	int idx = 0;
@@ -183,7 +183,7 @@ void p_type(Elf64 header)
  * p_entry - prints ELF entry point address
  * @header: ELF header
  */
-void p_entry(Elf64 header)
+void p_entry(Elf64_Ehdr header)
 {
 	int i = 0, size = 0;
 	unsigned char *ptr = (unsigned char *)&header.e_entry;
