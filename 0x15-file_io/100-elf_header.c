@@ -32,6 +32,8 @@ void p_class(Elf64_Ehdr header)
 		case ELFCLASSNONE:
 			printf("none");
 			break;
+		default:
+			printf("<unknown: %x>", header.e_ident[EI_CLASS]);
 	}
 	printf("\n");
 }
@@ -54,6 +56,8 @@ void p_data(Elf64_Ehdr header)
 		case ELFDATANONE:
 			printf("none");
 			break;
+		default:
+                        printf("<unknown: %x>", header.e_ident[EI_DATA]);
 	}
 	printf("\n");
 }
