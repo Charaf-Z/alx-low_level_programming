@@ -57,7 +57,7 @@ void p_data(Elf64_Ehdr header)
 			printf("none");
 			break;
 		default:
-                        printf("<unknown: %x>", header.e_ident[EI_DATA]);
+			printf("<unknown: %x>", header.e_ident[EI_CLASS]);
 	}
 	printf("\n");
 }
