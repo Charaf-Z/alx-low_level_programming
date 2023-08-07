@@ -56,8 +56,6 @@ void p_data(Elf64_Ehdr header)
 		case ELFDATANONE:
 			printf("none");
 			break;
-		default:
-			printf("<unknown: %x>", header.e_ident[EI_CLASS]);
 	}
 	printf("\n");
 }
@@ -232,11 +230,11 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_header\n"), exit(98);
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
-		dprintf(STDERR_FILENO, "Can't open file: %s\n", av[1]), exit(98);
+		dprintf(STDERR_FILENO, "Can't read file: %s\n", av[1]), exit(98);
 	bytes = read(fd, &header, sizeof(header));
 	if (bytes < 1 || bytes != sizeof(header))
 		dprintf(STDERR_FILENO, "Can't read file: %s\n", av[1]), exit(98);
-	if (header.e_ident[0] == 0x7f &&
+	if (header.e_ident[0] == 127 &&
 			header.e_ident[1] == 'E' &&
 			header.e_ident[2] == 'L' &&
 			header.e_ident[3] == 'F')
