@@ -3,7 +3,7 @@
 #define USAGE "Usage: cp file_from file_to\n"
 #define UNREAD "Error: Can't read from file %s\n"
 #define UNCREATE "Error: Can't write to %s\n"
-#define UNCLOSED "Error: Can't close %d\n"
+#define UNCLOSED "Error: Can't close fd %d\n"
 
 /**
  * main - entry pointe
