@@ -9,7 +9,7 @@ void p_magic(Elf64_Ehdr header)
 {
 	int idx = 0;
 
-	printf("Magic: ");
+	printf("  Magic:   ");
 	for (; idx < EI_NIDENT; idx++)
 		printf("%2.2x%s", header.e_ident[idx], idx == EI_NIDENT - 1 ? "\n" : " ");
 }
@@ -20,7 +20,7 @@ void p_magic(Elf64_Ehdr header)
  */
 void p_class(Elf64_Ehdr header)
 {
-	printf("Class: ");
+	printf("  Class:                             ");
 	switch (header.e_ident[EI_CLASS])
 	{
 		case ELFCLASS64:
@@ -42,7 +42,7 @@ void p_class(Elf64_Ehdr header)
  */
 void p_data(Elf64_Ehdr header)
 {
-	printf("Data: ");
+	printf("  Data:                              ");
 	switch (header.e_ident[EI_DATA])
 	{
 		case ELFDATA2MSB:
@@ -64,7 +64,7 @@ void p_data(Elf64_Ehdr header)
  */
 void p_version(Elf64_Ehdr header)
 {
-	printf("Version: %d %s \n",
+	printf("  Version:                           %d %s\n",
 		header.e_ident[EI_VERSION],
 		header.e_ident[EI_VERSION] == EV_CURRENT ? "(current)" : "");
 }
@@ -100,7 +100,7 @@ void p_reste_osabi(Elf64_Ehdr header)
  */
 void p_osabi(Elf64_Ehdr header)
 {
-	printf("OS/ABI: ");
+	printf("  OS/ABI:                            ");
 	switch (header.e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
@@ -142,7 +142,8 @@ void p_osabi(Elf64_Ehdr header)
  */
 void p_abi_version(Elf64_Ehdr header)
 {
-	printf("ABI Version: %d\n", header.e_ident[EI_ABIVERSION]);
+	printf("  ABI Version:                       %d\n",
+			header.e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -154,7 +155,7 @@ void p_type(Elf64_Ehdr header)
 	char *ptr = (char *)&header.e_type;
 	int idx = 0;
 
-	printf("Type: ");
+	printf("  Type:                              ");
 	if (header.e_ident[EI_DATA] == ELFDATA2MSB)
 		idx = 1;
 	switch (ptr[idx])
@@ -188,7 +189,7 @@ void p_entry(Elf64_Ehdr header)
 	int i = 0, size = 0;
 	unsigned char *ptr = (unsigned char *)&header.e_entry;
 
-	printf("Entry point address: 0x");
+	printf("  Entry point address:               0x");
 	if (header.e_ident[EI_DATA] != ELFDATA2MSB)
 	{
 		i = header.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
