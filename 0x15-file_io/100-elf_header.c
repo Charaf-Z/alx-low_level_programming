@@ -66,9 +66,9 @@ void p_data(Elf64_Ehdr header)
  */
 void p_version(Elf64_Ehdr header)
 {
-	printf("  Version:                           %d %s\n",
+	printf("  Version:                           %d%s\n",
 		header.e_ident[EI_VERSION],
-		header.e_ident[EI_VERSION] == EV_CURRENT ? "(current)" : "");
+		header.e_ident[EI_VERSION] == EV_CURRENT ? " (current)" : "");
 }
 
 /**
