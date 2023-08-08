@@ -11,7 +11,7 @@ void p_magic(Elf64_Ehdr header)
 
 	printf("  Magic:   ");
 	for (; idx < EI_NIDENT; idx++)
-		printf("%2.2x%s", header.e_ident[idx], idx == EI_NIDENT - 1 ? "\n" : " ");
+		printf("%02x%s", header.e_ident[idx], idx == EI_NIDENT - 1 ? "\n" : " ");
 }
 
 /**
