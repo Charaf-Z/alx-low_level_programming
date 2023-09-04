@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * write_textfile - Reads a text file and writes it to the standard output.
+ * read_textfile - Reads a text file and writes it to the standard output.
  * @filename: The name of the file to read.
  * @letters: The maximum number of letters to read and write.
  * Return: The actual number of letters read and written, or 0 on failure.
