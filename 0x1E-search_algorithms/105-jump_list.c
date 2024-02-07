@@ -2,7 +2,7 @@
 
 /**
  * jump_list - Searches for a value in a singly linked list
- * 		using jump search algorithm.
+ *		using jump search algorithm.
  *
  * @list: Pointer to the head of the linked list.
  * @size: Number of nodes in the linked list.

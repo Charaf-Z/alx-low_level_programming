@@ -2,14 +2,14 @@
 
 /**
  * interpolation_search - Searches for a value
- * 		in a sorted array using interpolation search algorithm.
+ *		in a sorted array using interpolation search algorithm.
  *
  * @array: Pointer to the first element of the sorted array.
  * @size: Number of elements in the array.
  * @value: Value to search for in the array.
  *
  * Return: Index of the first occurrence
- * 		of @value in @array, or -1 if not found.
+ *		of @value in @array, or -1 if not found.
  */
 int interpolation_search(int *array, size_t size, int value)
 {

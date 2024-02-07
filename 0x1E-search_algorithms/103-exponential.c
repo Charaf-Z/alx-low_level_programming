@@ -2,8 +2,8 @@
 
 /**
  * __binary_search - Searches for a value in a sorted array
- * 		using binary search algorithm. This is a helper function
- * 		used for internal binary search operations.
+ *		using binary search algorithm. This is a helper function
+ *		used for internal binary search operations.
  *
  * @array: Pointer to the first element of the sorted array.
  * @left: Index of the left boundary of the search range.
@@ -11,7 +11,7 @@
  * @value: Value to search for in the array.
  *
  * Return: Index of the first occurrence
- * 	of @value in the specified range of @array, or -1 if not found.
+ *		of @value in the specified range of @array, or -1 if not found.
  */
 int __binary_search(int *array, size_t left, size_t right, int value)
 {
@@ -41,14 +41,14 @@ int __binary_search(int *array, size_t left, size_t right, int value)
 
 /**
  * exponential_search - Searches for a value in a sorted array
- * 		using exponential search algorithm.
+ *		using exponential search algorithm.
  *
  * @array: Pointer to the first element of the sorted array.
  * @size: Number of elements in the array.
  * @value: Value to search for in the array.
  *
  * Return: Index of the first occurrence
- * 		of @value in @array, or -1 if not found.
+ *		of @value in @array, or -1 if not found.
  */
 int exponential_search(int *array, size_t size, int value)
 {
